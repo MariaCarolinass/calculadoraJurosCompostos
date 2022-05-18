@@ -69,8 +69,8 @@ public abstract class CalculadoraViewForm extends JFrame {
     
     private void eventos() {
         
-        btnFechar.addActionListener(this::btnCalcularClick);
-        btnFechar.addActionListener(this::btnLimparClick);
+        btnCalcular.addActionListener(this::btnCalcularClick);
+        btnLimpar.addActionListener(this::btnLimparClick);
         btnFechar.addActionListener(this::btnFecharClick);
         
     }
