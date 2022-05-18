@@ -3,6 +3,7 @@ package com.mycompany.calculadoraswingjava;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -43,6 +44,7 @@ public abstract class CalculadoraViewForm extends JFrame {
     public CalculadoraViewForm() {
         
         this.init();
+        this.eventos();
         
     }
     
@@ -61,6 +63,17 @@ public abstract class CalculadoraViewForm extends JFrame {
         
     }
 
+    protected abstract void btnCalcularClick(ActionEvent ev);
+    protected abstract void btnLimparClick(ActionEvent ev);
+    protected abstract void btnFecharClick(ActionEvent ev);
+    
+    private void eventos() {
+        
+        btnFechar.addActionListener(this::btnCalcularClick);
+        btnFechar.addActionListener(this::btnLimparClick);
+        btnFechar.addActionListener(this::btnFecharClick);
+        
+    }
     
     // Gets
     public JPanel getPnlForm() {
