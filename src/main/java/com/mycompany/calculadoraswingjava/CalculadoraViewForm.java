@@ -47,6 +47,8 @@ public abstract class CalculadoraViewForm extends JFrame {
         
         this.setTitle("Calculadora Juros Compostos");
         this.setSize(640, 480);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        
         this.getContentPane().setLayout(new BorderLayout());
         
         // add painel rodape no fim do container
