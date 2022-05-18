@@ -1,5 +1,7 @@
 package com.mycompany.calculadoraswingjava;
 
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -45,6 +47,10 @@ public abstract class CalculadoraViewForm extends JFrame {
         
         this.setTitle("Calculadora Juros Compostos");
         this.setSize(640, 480);
+        this.getContentPane().setLayout(new BorderLayout());
+        
+        // add painel rodape no fim do container
+        this.getContentPane().add(this.getPnlRodape(), BorderLayout.PAGE_END);
         
     }
     
@@ -62,7 +68,18 @@ public abstract class CalculadoraViewForm extends JFrame {
     public JPanel getPnlRodape() {
         // criar novo painel se for nulo
         if (pnlRodape == null) {
-            pnlRodape = new JPanel();
+            pnlRodape = new JPanel(new FlowLayout(FlowLayout.CENTER));
+            
+            // criando novos botões
+            btnCalcular = new JButton("Calcular");
+            btnLimpar = new JButton("Limpar");
+            btnFechar = new JButton("Fechar");
+            
+            // add botões no painel rodape
+            pnlRodape.add(this.btnCalcular);
+            pnlRodape.add(this.btnLimpar);
+            pnlRodape.add(this.btnFechar);
+            
         }
         
         return pnlRodape;
