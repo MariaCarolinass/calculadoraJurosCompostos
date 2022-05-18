@@ -11,6 +11,8 @@ import javax.swing.JTextField;
 
 public abstract class CalculadoraViewForm extends JFrame {
     
+    private static final int TAMANHO_TXT = 10;
+    
     // Painel
     protected JPanel pnlForm;
     protected JPanel pnlRodape;
@@ -51,9 +53,11 @@ public abstract class CalculadoraViewForm extends JFrame {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         
         this.getContentPane().setLayout(new BorderLayout());
+        this.setResizable(false);
         
         this.getContentPane().add(this.getPnlForm(), BorderLayout.CENTER);
         this.getContentPane().add(this.getPnlRodape(), BorderLayout.PAGE_END);
+        this.pack();
         
     }
 
@@ -65,25 +69,25 @@ public abstract class CalculadoraViewForm extends JFrame {
             pnlForm = new JPanel(new GridLayout(4, 2));
             
             this.jblCapital = new JLabel("Capital");
-            this.txtCapital = new JTextField(20);
+            this.txtCapital = new JTextField(TAMANHO_TXT);
             
             pnlForm.add(jblCapital);
             pnlForm.add(txtCapital);
             
             this.jblTaxaJuros = new JLabel("Taxa Juros");
-            this.txtTaxaJuros = new JTextField(20);
+            this.txtTaxaJuros = new JTextField(TAMANHO_TXT);
             
             pnlForm.add(jblTaxaJuros);
             pnlForm.add(txtTaxaJuros);
             
             this.jblPeriodo = new JLabel("Período");
-            this.txtPeriodo = new JTextField(20);
+            this.txtPeriodo = new JTextField(TAMANHO_TXT);
             
             pnlForm.add(jblPeriodo);
             pnlForm.add(txtPeriodo);
             
             this.jblMontante = new JLabel("Montante");
-            this.txtMontante = new JTextField(20);
+            this.txtMontante = new JTextField(TAMANHO_TXT);
             this.txtMontante.setEditable(false);
             
             pnlForm.add(jblMontante);
